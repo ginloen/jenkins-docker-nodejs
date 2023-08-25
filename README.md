@@ -56,13 +56,18 @@ sudo apt install openjdk-17-jre
 sudo apt-get install jenkins
 ```
 
-4. Start Jenkins
+4. Add jenkins user to docker group
+```
+sudo usermod -aG docker jenkins
+```
+
+5. Start Jenkins
 ```
 sudo systemctl enable jenkins
 sudo systemctl start jenkins
 ```
 
-5. Get initial Admin Password
+6. Get initial Admin Password
 ```
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
