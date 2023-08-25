@@ -10,16 +10,14 @@ pipeline {
         stage('Git checkout Dockerfile') {
             steps {
                 dir('node-hello') {
-                    sh 'git clone 
-https://github.com/ginloen/jenkins-docker-nodejs.git'
+                    sh 'git clone https://github.com/ginloen/jenkins-docker-nodejs.git'
                 }
             }
         }
         stage('Docker build') {
             steps {
                 dir('node-hello') {
-                    sh 'docker build -t samplenodeapp -f 
-${WORKSPACE}/node-hello/jenkins-docker-nodejs/Dockerfile .'
+                    sh 'docker build -t samplenodeapp -f ${WORKSPACE}/node-hello/jenkins-docker-nodejs/Dockerfile .'
                 }
             }
         }
